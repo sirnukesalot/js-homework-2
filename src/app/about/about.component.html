@@ -1,0 +1,48 @@
+<div class="aboutus-section">
+    
+                    <div class="aboutus">
+                        <img class="aboutus-text" [src]=imageURL()>
+                        <p class="aboutus-text">My name is Madi</p>
+                        <p class="aboutus-text">{{ description }} </p>
+                        <button (click)="toggleMessage()" class="border">Click here</button>
+                        <div *ngIf="showMessage == true">
+                            <h2>Thank you for visiting!</h2>
+                        </div>
+                        <h2 [class.highlight]="isWorking == true">Looking for new offers!</h2> 
+                        <input type="text" [(ngModel)]="email" placeholder="Please enter your email"/>
+                        <button (click) = "sendEmail()">Send email</button>
+                        <p *ngIf="emailSent == true">Thanks, {{ email }}, we'll contact you soon</p>
+                        <p>Like count: {{ likes }}</p>
+                        <button (click)="like()">Like</button>
+                    </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                </div>
+                <div class="box">
+                    <div class="feature">
+                        <div class="feature-box">
+                            <div class="clearfix">
+                                <div class="feature-content">
+                                    <h4>What i have learned</h4>
+                                    <p>C++,Python,Java,GO,Kotlin and more...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="clearfix">
+                                <div class="feature-content">
+                                    <h4>More information</h4>
+                                    <p>Promising student</p>
+                                </div>
+                            </div>
+                        </div>
+                <div class="feature-box">
+                    <div class="clearfix">
+                    <div class="feature-content">
+                        <h4>And more</h4>
+                        <p>Looking for new opportunities</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+<router-outlet></router-outlet>

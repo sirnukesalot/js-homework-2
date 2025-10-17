@@ -1,0 +1,18 @@
+<button (click)="toggleList()">
+  <span *ngIf="!showList; else hideText">Show List</span>
+  <ng-template #hideText>Hide List</ng-template>
+</button>
+<div *ngIf="showList" style="margin-top: 10px;">
+  <input type="text"  [(ngModel)]="searchText" placeholder="Search game by name..." (input)="filterResults(filter.value)" #filter/>
+</div>
+<ul *ngIf="showList">
+    <li *ngFor="let game of filteredGames">
+        <img src="{{ game.image }}" width="300" height="200"/>
+        <br /> 
+        <a> <span class="title" >{{game.title}}</span>
+            <hr />
+            <br /> <span class="badge"> Ends in {{game.end_date}}</span> 
+            <a href="{{game.gamerpower_url}}" class="claim">Button</a>
+        </a>
+     </li>
+</ul>
